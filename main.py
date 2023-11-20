@@ -36,7 +36,7 @@ def get_next_state_sequence(current_state, input_sequence):
 
 # Example usage:
 current_state = quintuples.initialState
-inputSequence = ["b", "m", "x", "w", "u"]  # Input
+inputSequence = ["a", "f", "g", "h", "c", "d", "y"]  # Input
 next_state = get_next_state_sequence(current_state, inputSequence)
 
 
@@ -49,7 +49,7 @@ else:
 
 # Final State Scenario:
 
-# acdfhy
+# afgcdy
 # acdehy
 # acdfggy
 # bxwu
