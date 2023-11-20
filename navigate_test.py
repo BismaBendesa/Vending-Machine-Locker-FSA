@@ -652,10 +652,10 @@ customtkinter.CTkLabel(loker_terbuka_frame, text="Vending Machine Loker", font=f
 customtkinter.CTkLabel(loker_terbuka_frame, text="Ambil Barang", font=font_subtitle).pack()
 customtkinter.CTkLabel(loker_terbuka_frame, text="------------------------------------------------------------------------------", font=font_subtitle).pack(pady=10)
 img4 = customtkinter.CTkImage(Image.open("./assets/success.png"), size=(120,120))
-button5 = customtkinter.CTkButton(loker_terbuka_frame, image=img4, text="",  fg_color="transparent", command=show_menu_ambil_barang, font=font_subtitle)
+button5 = customtkinter.CTkButton(loker_terbuka_frame, image=img4, text="",  fg_color="transparent", command='', font=font_subtitle)
 button5.pack(pady=20)
 customtkinter.CTkLabel(loker_terbuka_frame, text="Loker berhasil terbuka. Silahkan ambil/taruh barang anda!", font=font_subtitle).pack(pady=10)
-customtkinter.CTkButton(loker_terbuka_frame, text="Tutup Loker >>", command=show_konfirmasi_tutup, font=font_subtitle, fg_color="transparent").pack(pady=10)
+customtkinter.CTkButton(loker_terbuka_frame, text="Tutup Loker >>", command=show_konfirmasi_tutup, font=font_subtitle, fg_color="transparent").pack(pady=10) 
 
 
 # Konfirmasi tutup loker frame
@@ -718,23 +718,27 @@ button8.pack(pady=20)
 customtkinter.CTkLabel(pembayaran_tunai_frame, text="Vending Machine Loker", font=font_title).pack(pady=20)
 customtkinter.CTkLabel(pembayaran_tunai_frame, text="Taruh Barang", font=font_subtitle).pack()
 customtkinter.CTkLabel(pembayaran_tunai_frame, text="------------------------------------------------------------------------------", font=font_subtitle).pack(pady=10)
-customtkinter.CTkLabel(pembayaran_tunai_frame, text="Masukan 2 uang Rp.1000 atau uang Rp.2000 Biaya pembayaran Rp. 2000. Hanya menerima uang kertas.", font=font_subtitle, wraplength=360).pack(pady=10)
-img7 = customtkinter.CTkImage(Image.open("./assets/uang_seribu.png"), size=(120,120))
-img8 = customtkinter.CTkImage(Image.open("./assets/uang_duaribu.png"), size=(120,120))
+title = customtkinter.CTkLabel(pembayaran_tunai_frame, text="Masukan 2 uang kertas Rp.1000 atau uang Rp.2000 Biaya pembayaran Rp. 2000. Hanya menerima uang kertas", font=font_subtitle, wraplength=500, anchor="e").pack()
+img7 = customtkinter.CTkImage(Image.open("./assets/uang_seribu.png"), size=(120,54))
+img8 = customtkinter.CTkImage(Image.open("./assets/uang_duaribu.png"), size=(120,54))
+
+
 button8 = customtkinter.CTkButton(pembayaran_tunai_frame, image=img7, text="",  fg_color="transparent", font=font_subtitle)
 button9 = customtkinter.CTkButton(pembayaran_tunai_frame, image=img8, text="",  fg_color="transparent", font=font_subtitle)
-button8.pack(pady=20)
-button9.pack(pady=20)
-customtkinter.CTkButton(pembayaran_tunai_frame, text="Konfirmasi Pembayaran >>", command=show_pembayaran_berhasil, font=font_subtitle, fg_color="transparent").pack(pady=10) # need some if else statement
+customtkinter.CTkButton(pembayaran_tunai_frame, text="Konfirmasi Pembayaran >>", command=show_pembayaran_berhasil, font=font_subtitle, fg_color="transparent").pack(pady=20) # need some if else statement
+button8.pack(side=tk.TOP)
+button9.pack()
+
+
 
 # pembayaran berhasil frame
 customtkinter.CTkLabel(pembayaran_berhasil_frame, text="Vending Machine Loker", font=font_title).pack(pady=20)
 customtkinter.CTkLabel(pembayaran_berhasil_frame, text="Taruh Barang", font=font_subtitle).pack()
 customtkinter.CTkLabel(pembayaran_berhasil_frame, text="------------------------------------------------------------------------------", font=font_subtitle).pack(pady=10)
-button10 = customtkinter.CTkButton(pembayaran_berhasil_frame, image=img4, text="",  fg_color="transparent", command=show_loker_terbuka, font=font_subtitle)
 customtkinter.CTkLabel(pembayaran_berhasil_frame, text="Pembayaran berhasil dilakukan", font=font_subtitle, wraplength=360).pack(pady=10)
-customtkinter.CTkButton(pembayaran_berhasil_frame, text="Lanjut >>", command=show_loker_terbuka, font=font_subtitle, fg_color="transparent").pack(pady=10) 
+button10 = customtkinter.CTkButton(pembayaran_berhasil_frame, image=img4, text="",  fg_color="transparent", command=show_loker_terbuka, font=font_subtitle)
 button10.pack(pady=20)
+customtkinter.CTkButton(pembayaran_berhasil_frame, text="Lanjut >>", command=show_loker_terbuka, font=font_subtitle, fg_color="transparent").pack(pady=10) 
 
 # cetak struk frame
 customtkinter.CTkLabel(cetak_struk_frame, text="Vending Machine Loker", font=font_title).pack(pady=20)
@@ -743,8 +747,8 @@ customtkinter.CTkLabel(cetak_struk_frame, text="--------------------------------
 img9 = customtkinter.CTkImage(Image.open("./assets/cetak_struk.png"), size=(120,120))
 button11 = customtkinter.CTkButton(cetak_struk_frame, image=img9, text="",  fg_color="transparent", command=show_main_menu, font=font_subtitle)
 button11.pack(pady=20)
-customtkinter.CTkLabel(cetak_struk_frame, text="Silahkan ambil struk anda! Struk digunakan ketika mengambil barang. Jangan Dihilangkan ya!", font=font_subtitle).pack(pady=10)
-customtkinter.CTkButton(cetak_struk_frame, text="Kembali ke menu awal >>", command=show_main_menu, font=font_subtitle, fg_color="transparent").pack(pady=10) 
+customtkinter.CTkLabel(cetak_struk_frame, text="Silahkan ambil struk anda! Struk digunakan ketika mengambil barang. Jangan dihilangkan ya!", font=font_subtitle, wraplength=600).pack(pady=10)
+customtkinter.CTkButton(cetak_struk_frame, text="Kembali ke menu awal >>", command=show_home, font=font_subtitle, fg_color="transparent").pack(pady=10) 
 
 
 
