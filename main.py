@@ -1,6 +1,8 @@
 """Module for main execution"""
 import quintuples
 
+final_state = ''
+
 for state, transitions in quintuples.transitionTable.items():
     print(f"State {quintuples.states[state]}:")
     for i, symbol in enumerate(transitions):
@@ -17,7 +19,8 @@ def get_next_state(current_state, input_symbol):
         if next_state:
             for finalState in quintuples.finalStates:
                 if next_state == finalState:
-                    return "FINAL STATES"
+                    final_state = next_state
+                    return next_state + " (Final States)"
             return next_state
     else:
         return None
@@ -36,27 +39,25 @@ def get_next_state_sequence(current_state, input_sequence):
 
 # Example usage:
 current_state = quintuples.initialState
-inputSequence = ["a", "f", "g", "h", "c", "d", "y"]  # Input
+inputSequence = ["b", "m", "m", "m", "m", "m"] # Input
 next_state = get_next_state_sequence(current_state, inputSequence)
 
 
 if next_state:
-    print(f"Current state: {current_state}, Input symbol: {inputSequence}, Next state: {next_state}")
+    print(f"Current state: {next_state}, Input symbol: {inputSequence}")
 else:
     print("State Stuck!")
 
 # scenario lengkapi dengan output
 
 # Final State Scenario:
-
-# afgcdy
-# acdehy
-# acdfggy
-# bxwu
-# bxvs
-# b m m m m m
-# bmxwu
-# bmmxwu
-# bmmmxwu
-# bmmmmxwu
-# bmmmmmxwu
+# 1. Menitip barang dengan membayar tunai
+#  ["a", "f", "g", "g", "c", "d", "y"]
+# 2. Menitip barang dengan membayar qris
+# ["a", "e", "h", "c", "d", "y"]
+# 3. Mengambil barang sementara
+# ["b", "x", "w", "u"]
+# 4. Mengambil barang dan logout
+# ["b", "x", "v", "s"]
+# 5. Password salah 5x 
+# ["b", "m", "m", "m", "m", "m"]
