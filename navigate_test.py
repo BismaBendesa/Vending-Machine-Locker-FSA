@@ -576,7 +576,7 @@ def show_loker_dikunci_ambil_barang():
     else: 
         password_loker[global_no_loker - 1] = "NULL"
     print(password_loker)
-    print("Pass Loker")
+    print("No telp Loker")
     print("-----------------------------")
     if ambil_sementara:
         notelp_loker[global_no_loker - 1] = notelp_loker[global_no_loker - 1]
